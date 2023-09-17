@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  database:
+    image: 'mysql'
+    container_name: "mysql_P1"
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+  front:
+    image: 'jtreaper/fr'
+    container_name: "fr"
+    ports:
+      - "3000:3000"
+  backend:
+    image: 'jtreaper/node'
+    container_name: "node"
+    environment:
+      DB_USER: root
+      DB_PASSWORD: secret
+      DB_HOST: database
+      DB_PORT: 3306
+      DB_NAME: process
+    ports:
+      - "8000:8000"
+volumes:
+  mysql-data:

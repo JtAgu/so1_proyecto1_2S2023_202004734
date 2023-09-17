@@ -202,7 +202,7 @@ app.get('/getRam/:id', (req, res) => {
 
 app.get('/cpu-data/:id', (req, res) => {
   const instance = req.params.id;
-  const sqlQuery =  `SELECT TIME(FechaHora) AS Hora, Porcentaje FROM CPU WHERE instance='${instance}' LIMIT 10 `;
+  const sqlQuery =  `SELECT TIME(FechaHora) AS Hora, Porcentaje FROM CPU WHERE instance='${instance}' LIMIT 25 `;
 
   dbConnection.query(sqlQuery, (err, results) => {
     if (err) {
@@ -226,7 +226,7 @@ app.get('/cpu-data/:id', (req, res) => {
 
 app.get('/ram-data/:id', (req, res) => {
   const instance = req.params.id;
-  const sqlQuery =  `SELECT TIME(FechaHora) AS Hora, Porcentaje FROM RAM WHERE instance='${instance}' LIMIT 10 `;
+  const sqlQuery =  `SELECT TIME(FechaHora) AS Hora, Porcentaje FROM RAM WHERE instance='${instance}' LIMIT 25 `;
 
   dbConnection.query(sqlQuery, (err, results) => {
     if (err) {

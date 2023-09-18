@@ -20,7 +20,7 @@ struct sysinfo inf;
 
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Henry Mendoza - 202004734");
+MODULE_AUTHOR("Justin Aguirre - 202004734");
 MODULE_DESCRIPTION("Modulo de CPU SO1 Proyecto 1"); 
 
 
@@ -85,7 +85,7 @@ static struct proc_ops ops_cpu={
 static int __init cpu_init(void)
 {
     struct proc_dir_entry *entry;
-    entry = proc_create("cpu_202004810", 0777, NULL, &ops_cpu);
+    entry = proc_create("cpu_202004734", 0777, NULL, &ops_cpu);
     if (!entry){
 		return -1;
 	}else{
@@ -97,7 +97,7 @@ static int __init cpu_init(void)
 
 static void __exit cpu_exit(void)
 {
-    remove_proc_entry("cpu_202004810", NULL);
+    remove_proc_entry("cpu_202004734", NULL);
     printk(KERN_INFO "Modulo removido: cpu_202004734\n");
 }
 

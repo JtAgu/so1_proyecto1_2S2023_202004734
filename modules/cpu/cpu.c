@@ -75,7 +75,7 @@ static struct proc_ops operaciones =
 //Funcion a ejecuta al insertar el modulo en el kernel con insmod
 static int ram_init(void)
 {
-    proc_create("ram_20200734", 0, NULL, &operaciones);
+    proc_create("ram_202004734", 0, NULL, &operaciones);
     printk(KERN_INFO "Modulo iniciado: ram_202004734\n");
     return 0;
 }
